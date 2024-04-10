@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "NM_lab1_spline"
+version = "0.1.0"
+description = ""
+authors = ["NikitaSyatov <syatov430@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+numpy = "1.26"
+pandas = "^2.2.1"
+PySimpleGUI = "^5.0.4"
+matplotlib = "^3.8.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
