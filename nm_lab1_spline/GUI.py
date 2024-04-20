@@ -213,45 +213,45 @@ list_selector = [
     [
         [
             lambda x: sp.oscilate1(func=sp.test_func, x=x),
-            lambda x: sp.oscilate1(func=sp.d_test_func, x=x),
-            lambda x: sp.oscilate1(func=sp.dd_test_func, x=x),
+            lambda x: sp.d_oscilate1(func=sp.d_test_func, x=x),
+            lambda x: sp.dd_oscilate1(func=sp.dd_test_func, x=x),
         ],
         [
             lambda x: sp.oscilate1(func=sp.func1, x=x),
-            lambda x: sp.oscilate1(func=sp.d_func1, x=x),
-            lambda x: sp.oscilate1(func=sp.dd_func1, x=x),
+            lambda x: sp.d_oscilate1(func=sp.d_func1, x=x),
+            lambda x: sp.dd_oscilate1(func=sp.dd_func1, x=x),
         ],
         [
             lambda x: sp.oscilate1(func=sp.func2, x=x),
-            lambda x: sp.oscilate1(func=sp.d_func2, x=x),
-            lambda x: sp.oscilate1(func=sp.dd_func2, x=x),
+            lambda x: sp.d_oscilate1(func=sp.d_func2, x=x),
+            lambda x: sp.dd_oscilate1(func=sp.dd_func2, x=x),
         ],
         [
             lambda x: sp.oscilate1(func=sp.func3, x=x),
-            lambda x: sp.oscilate1(func=sp.d_func3, x=x),
-            lambda x: sp.oscilate1(func=sp.dd_func3, x=x),
+            lambda x: sp.d_oscilate1(func=sp.d_func3, x=x),
+            lambda x: sp.dd_oscilate1(func=sp.dd_func3, x=x),
         ],
     ],
     [
         [
             lambda x: sp.oscilate2(func=sp.test_func, x=x),
-            lambda x: sp.oscilate2(func=sp.d_test_func, x=x),
-            lambda x: sp.oscilate2(func=sp.dd_test_func, x=x),
+            lambda x: sp.d_oscilate2(func=sp.d_test_func, x=x),
+            lambda x: sp.dd_oscilate2(func=sp.dd_test_func, x=x),
         ],
         [
             lambda x: sp.oscilate2(func=sp.func1, x=x),
-            lambda x: sp.oscilate2(func=sp.d_func1, x=x),
-            lambda x: sp.oscilate2(func=sp.dd_func1, x=x),
+            lambda x: sp.d_oscilate2(func=sp.d_func1, x=x),
+            lambda x: sp.dd_oscilate2(func=sp.dd_func1, x=x),
         ],
         [
             lambda x: sp.oscilate2(func=sp.func2, x=x),
-            lambda x: sp.oscilate2(func=sp.d_func2, x=x),
-            lambda x: sp.oscilate2(func=sp.dd_func2, x=x),
+            lambda x: sp.d_oscilate2(func=sp.d_func2, x=x),
+            lambda x: sp.dd_oscilate2(func=sp.dd_func2, x=x),
         ],
         [
             lambda x: sp.oscilate2(func=sp.func3, x=x),
-            lambda x: sp.oscilate2(func=sp.d_func3, x=x),
-            lambda x: sp.oscilate2(func=sp.dd_func3, x=x),
+            lambda x: sp.d_oscilate2(func=sp.d_func3, x=x),
+            lambda x: sp.dd_oscilate2(func=sp.dd_func3, x=x),
         ],
     ],
 ]
