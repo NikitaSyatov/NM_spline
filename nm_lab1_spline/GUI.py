@@ -128,7 +128,7 @@ layout = [
         sg.Column(column1),
         sg.VerticalSeparator(),
         sg.Column(button_column),
-        # sg.Frame("Данные", frame_output_data, element_justification="right"),
+        sg.Frame("Данные", frame_output_data, element_justification="right"),
     ],
     [sg.HorizontalSeparator()],
     [

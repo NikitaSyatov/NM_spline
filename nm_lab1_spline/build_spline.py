@@ -101,8 +101,11 @@ def dd_oscilate2(ddfunc, x):
 def spline(xj, n, a, b, c, d, bord: list, x):
     h = (bord[1] - bord[0]) / n
     xj = np.array(xj)
-    i = np.where(x <= xj)[0][0] - 1
-    xi = xj[i]
+    i = np.where(x <= xj)[0][0]
+    if i == (xj.shape[0] - 1):
+        i = i - 1
+    # print(i)
+    xi = xj[i + 1]
     return (
         a[i]
         + b[i] * (x - xi)
@@ -114,8 +117,10 @@ def spline(xj, n, a, b, c, d, bord: list, x):
 def d_spline(xj, n, a, b, c, d, bord: list, x):
     h = (bord[1] - bord[0]) / n
     xj = np.array(xj)
-    i = np.where(x <= xj)[0][0] - 1
-    xi = xj[i]
+    i = np.where(x <= xj)[0][0]
+    if i == (xj.shape[0] - 1):
+        i = i - 1
+    xi = xj[i + 1]
     return b[i] + c[i] * ((x - xi)) + (d[i] / 2) * ((x - xi) ** 2)
 
 
@@ -123,8 +128,10 @@ def dd_spline(xj, n, a, b, c, d, bord: list, x):
     h = (bord[1] - bord[0]) / n
     xj = np.array(xj)
     i = np.argmin(np.abs(xj - x))
-    i = np.where(x <= xj)[0][0] - 1
-    xi = xj[i]
+    i = np.where(x <= xj)[0][0]
+    if i == (xj.shape[0] - 1):
+        i = i - 1
+    xi = xj[i + 1]
     return c[i] + d[i] * ((x - xi))
 
 
@@ -161,6 +168,7 @@ def build_spline(n, bord, f, d_f, dd_f):
             + c[i] * h / 3
             + c[i - 1] * h / 6
         )
+    c = c[1:]
     # dataframe 1
     df1 = pd.DataFrame(
         data={
@@ -168,7 +176,7 @@ def build_spline(n, bord, f, d_f, dd_f):
             "xi": x_bord_right,
             "a": a,
             "b": b,
-            "c": c[1:],
+            "c": c,
             "d": d,
         }
     )
@@ -228,4 +236,4 @@ def build_spline(n, bord, f, d_f, dd_f):
 if __name__ == "__main__":
     # bord = [-1, 1]  # test func
     bord = [2, 4]  # func1
-    build_spline(10, bord, func3, d_func3, dd_func3)
+    build_spline(3, bord, func3, d_func3, dd_func3)
